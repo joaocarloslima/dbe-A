@@ -20,9 +20,20 @@ public class SetupDAO {
 	}
 	
 	public List<Setup> getAll(){
-		String jpql = "SELECT s FROM Setup s";
+		String jpql = "SELECT s FROM Setup s JOIN s.user u";
 		TypedQuery<Setup> createQuery = manager.createQuery(jpql, Setup.class);
 		return createQuery.getResultList();
+	}
+
+	public Setup findById(Long id) {
+		return manager.find(Setup.class, id);		
+	}
+
+	public void update(Setup setup) {
+		manager.getTransaction().begin();
+		manager.merge(setup);
+		manager.flush();
+		manager.getTransaction().commit();
 	}
 
 }

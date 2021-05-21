@@ -13,20 +13,22 @@
 
 <body>
     <div class="card">
-	    <p:tabMenu activeIndex="#{param.i}">
-	        <p:menuitem value="Home" outcome="index.xhtml" icon="pi pi-fw pi-home">
-	            <f:param name="i" value="0"/>
-	        </p:menuitem>
-	        <p:menuitem value="Setup" outcome="new_setup.xhtml" icon="pi pi-fw pi-desktop">
-	            <f:param name="i" value="1"/>
-	        </p:menuitem>
-	        <p:menuitem value="Profile" outcome="index.xhtml" icon="pi pi-fw pi-user">
-	            <f:param name="i" value="2"/>
-	        </p:menuitem>
-	        <p:menuitem value="User" outcome="user.xhtml" icon="pi pi-fw pi-users">
-	            <f:param name="i" value="3"/>
-	        </p:menuitem>
-	    </p:tabMenu>
+    	<ui:insert name="menu">
+		    <p:tabMenu activeIndex="#{param.i}">
+		        <p:menuitem value="Home" outcome="index.xhtml" icon="pi pi-fw pi-home">
+		            <f:param name="i" value="0"/>
+		        </p:menuitem>
+		        <p:menuitem value="Setup" outcome="new_setup.xhtml" icon="pi pi-fw pi-desktop">
+		            <f:param name="i" value="1"/>
+		        </p:menuitem>
+		        <p:menuitem value="Profile" outcome="index.xhtml" icon="pi pi-fw pi-user">
+		            <f:param name="i" value="2"/>
+		        </p:menuitem>
+		        <p:menuitem value="User" outcome="user.xhtml" icon="pi pi-fw pi-users">
+		            <f:param name="i" value="3"/>
+		        </p:menuitem>
+		    </p:tabMenu>
+    	</ui:insert>
 	</div>
 	
 	<div id="content">
